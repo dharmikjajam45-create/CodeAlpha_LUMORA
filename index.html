@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LUMORA — The Campus Memory Archive</title>
+
+    <meta name="description" content="LUMORA is a visual archive of campus memories, celebrations, culture and unforgettable moments.">
+    <meta name="theme-color" content="#f5f1e9">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">LUMORA<span>.</span></div>
+        <div class="loader-line"></div>
+        <p>COLLECTING MEMORIES</p>
+    </div>
+
+
+    <!-- NAVIGATION -->
+    <header class="navbar" id="navbar">
+
+        <a href="#home" class="logo">
+            LUMORA<span>.</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#gallery">Archive</a>
+            <a href="#about">Our Story</a>
+        </nav>
+
+        <div class="nav-right">
+            <span class="nav-label">A CAMPUS MEMORY PROJECT</span>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-top">
+                <span class="eyebrow">AN ARCHIVE OF REAL MOMENTS</span>
+                <span class="edition">VOL. 01 — CAMPUS EDITION</span>
+            </div>
+
+            <div class="hero-layout">
+
+                <div class="hero-copy">
+
+                    <span class="hero-tag">
+                        <span class="sparkle">✳</span>
+                        MORE THAN JUST PHOTOGRAPHS
+                    </span>
+
+                    <h1>
+                        We came.<br>
+                        We lived.<br>
+                        <em>We remember.</em>
+                    </h1>
+
+                    <p>
+                        Some moments deserve more than a place
+                        in our camera roll. This is a collection
+                        of the people, celebrations and little
+                        stories that made campus life unforgettable.
+                    </p>
+
+                    <a href="#gallery" class="explore-link">
+                        EXPLORE THE ARCHIVE
+                        <span>↗</span>
+                    </a>
+
+                    <div class="hero-side-note">
+                        EVERY FRAME HAS A STORY
+                    </div>
+
+                </div>
+
+
+                <!-- FEATURED IMAGE -->
+                <div class="hero-feature">
+
+                    <div class="feature-image-wrap">
+                        <img
+                            src="images/photo1.jpg"
+                            alt="A memorable campus moment"
+                            class="feature-image"
+                            id="featuredImage"
+                        >
+                    </div>
+
+                    <div class="feature-label">
+                        <span>THE CAMPUS CHRONICLES</span>
+                        <span>01 / 14</span>
+                    </div>
+
+                    <div class="feature-stamp">
+                        <span>REAL</span>
+                        <span>MOMENTS</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-bottom-line">
+                <span>MADE OF MEMORIES</span>
+                <span>14 ORIGINAL PHOTOGRAPHS</span>
+                <span>SCROLL TO EXPLORE ↓</span>
+            </div>
+
+        </section>
+
+
+        <!-- INTRO STRIP -->
+        <section class="intro-strip">
+
+            <span>REAL PEOPLE</span>
+            <span class="intro-star">✳</span>
+            <span>REAL CELEBRATIONS</span>
+            <span class="intro-star">✳</span>
+            <span>REAL MEMORIES</span>
+            <span class="intro-star">✳</span>
+            <span>ONE CAMPUS STORY</span>
+
+        </section>
+
+
+        <!-- GALLERY SECTION -->
+        <section class="gallery-section" id="gallery">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">THE COLLECTION — 001</span>
+
+                    <h2>
+                        Captured<br>
+                        <em>moments.</em>
+                    </h2>
+                </div>
+
+                <p>
+                    A little piece of every celebration,
+                    <br>
+                    every friendship and every memory.
+                </p>
+
+            </div>
+
+
+            <!-- FILTERS AND SEARCH -->
+            <div class="gallery-controls">
+
+                <div class="filter-bar">
+
+                    <button class="filter-btn active" data-filter="all">
+                        All moments
+                    </button>
+
+                    <button class="filter-btn" data-filter="celebration">
+                        Celebrations
+                    </button>
+
+                    <button class="filter-btn" data-filter="culture">
+                        Culture
+                    </button>
+
+                    <button class="filter-btn" data-filter="campus">
+                        Campus life
+                    </button>
+
+                </div>
+
+
+                <div class="search-box">
+                    <span>⌕</span>
+
+                    <input
+                        type="search"
+                        id="gallerySearch"
+                        placeholder="Find a memory..."
+                        aria-label="Search photographs"
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- COLLECTION INFORMATION -->
+            <div class="collection-meta">
+                <span>THE MEMORY COLLECTION</span>
+                <span id="photoCount">14 PHOTOGRAPHS</span>
+            </div>
+
+
+            <!-- JAVASCRIPT WILL GENERATE PHOTO CARDS HERE -->
+            <div class="gallery-grid" id="galleryGrid">
+            </div>
+
+
+            <!-- EMPTY SEARCH RESULT -->
+            <div class="empty-state" id="emptyState" hidden>
+
+                <span>✳</span>
+
+                <h3>No memories found.</h3>
+
+                <p>Try another search or explore a different category.</p>
+
+            </div>
+
+
+            <div class="gallery-note">
+                EVERY PHOTOGRAPH IS A MOMENT THAT STAYED.
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section" id="about">
+
+            <div class="about-decoration">L</div>
+
+            <span class="eyebrow">A NOTE BEHIND THE ARCHIVE</span>
+
+            <h2>
+                Life happens<br>
+                in the <em>little moments.</em>
+            </h2>
+
+            <p>
+                LUMORA is more than a photography gallery.
+                It is a small digital archive dedicated to
+                the experiences that make campus life special.
+                From celebrations to everyday memories,
+                every photograph holds a story worth keeping.
+            </p>
+
+            <div class="about-signature">
+                <span>COLLECTED WITH CARE</span>
+                <span>✳</span>
+                <span>REMEMBERED FOREVER</span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <a href="#home" class="logo footer-logo">
+                LUMORA<span>.</span>
+            </a>
+
+            <a href="#home" class="back-top">
+                BACK TO TOP ↑
+            </a>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 LUMORA — THE CAMPUS MEMORY ARCHIVE</span>
+            <span>MADE TO REMEMBER.</span>
+        </div>
+
+    </footer>
+
+
+    <!-- LIGHTBOX -->
+    <div
+        class="lightbox"
+        id="lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Photograph viewer"
+    >
+
+        <div class="lightbox-top">
+            <span>LUMORA — PHOTO ARCHIVE</span>
+            <span id="lightboxCount">01 / 14</span>
+        </div>
+
+
+        <button
+            class="lightbox-close"
+            id="lightboxClose"
+            aria-label="Close photograph viewer"
+        >
+            ×
+        </button>
+
+
+        <button
+            class="lightbox-prev"
+            id="lightboxPrev"
+            aria-label="Previous photograph"
+        >
+            ‹
+        </button>
+
+
+        <div class="lightbox-content">
+
+            <img
+                src=""
+                alt="Selected campus memory"
+                id="lightboxImage"
+            >
+
+            <div class="lightbox-caption">
+
+                <div>
+                    <span class="caption-label">A MOMENT TO REMEMBER</span>
+                    <h3 id="lightboxTitle">Campus Memory</h3>
+                </div>
+
+                <span id="lightboxCategory">CAMPUS</span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="lightbox-next"
+            id="lightboxNext"
+            aria-label="Next photograph"
+        >
+            ›
+        </button>
+
+
+        <div class="lightbox-hint">
+            USE ← → TO NAVIGATE &nbsp; • &nbsp; ESC TO CLOSE
+        </div>
+
+    </div>
+
+</body>
+</html>
